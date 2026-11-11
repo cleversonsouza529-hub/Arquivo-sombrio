@@ -1,0 +1,134 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arquivo Sombrio | Investigações</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080808;color:#eee;font-family:Arial,sans-serif}
+header{background:#111;border-bottom:2px solid #c9a227;padding:20px;text-align:center}
+.logo{color:#d7b43b;font-size:27px;font-weight:bold;letter-spacing:3px}
+header p{color:#888;font-size:11px;letter-spacing:3px}
+nav{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;padding:15px;background:#151515}
+nav a{color:#ddd;text-decoration:none;font-size:13px}
+nav a:hover{color:#d7b43b}
+.hero{min-height:420px;padding:90px 20px;text-align:center;background:linear-gradient(#0009,#000e),url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1400') center/cover}
+.hero h1{font-size:38px;color:#d7b43b}
+.hero p{max-width:550px;margin:20px auto;color:#ddd;line-height:1.7}
+.btn{display:inline-block;background:#c9a227;color:#080808;padding:14px 22px;text-decoration:none;font-weight:bold;border:0;cursor:pointer}
+section{padding:45px 20px;max-width:1050px;margin:auto}
+h2{color:#d7b43b;letter-spacing:2px}
+.sub{color:#888;font-size:13px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:25px}
+.card{background:#151515;border:1px solid #292929;padding:22px}
+.card h3{color:#d7b43b}
+.card p{color:#aaa;line-height:1.6;font-size:14px}
+.tag{color:#c9a227;font-size:11px;letter-spacing:2px}
+.board{background:#111;border:1px solid #473b19;padding:22px;margin-top:20px}
+.clue{border-left:3px solid #c9a227;padding:10px 15px;margin:15px 0;background:#191919;color:#ccc}
+button,input{font:inherit}
+input{width:100%;padding:13px;background:#080808;border:1px solid #555;color:white;margin:10px 0}
+button{background:#c9a227;color:#080808;border:0;padding:13px 18px;font-weight:bold;cursor:pointer}
+.vote{display:block;margin:12px 0;padding:15px;background:#191919;border:1px solid #333;color:#eee;cursor:pointer}
+.vote:hover{border-color:#c9a227}
+#message{color:#d7b43b;margin-top:12px}
+footer{text-align:center;padding:30px;background:#111;color:#777;font-size:12px;border-top:1px solid #473b19}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">ARQUIVO SOMBRIO</div>
+<p>O DESCONHECIDO ESTÁ MAIS PERTO DO QUE VOCÊ IMAGINA</p>
+</header>
+
+<nav>
+<a href="#inicio">INÍCIO</a>
+<a href="#casos">CASOS</a>
+<a href="#pistas">PISTAS</a>
+<a href="#votacao">VOTAÇÃO</a>
+<a href="#investigador">INVESTIGADOR</a>
+</nav>
+
+<div class="hero" id="inicio">
+<h1>VOCÊ INVESTIGARIA?</h1>
+<p>Histórias inexplicáveis, lugares abandonados e mistérios que desafiam qualquer explicação. Entre no arquivo e descubra o que está escondido.</p>
+<a class="btn" href="#casos">ENTRAR NAS INVESTIGAÇÕES</a>
+</div>
+
+<section id="casos">
+<h2>ARQUIVOS CONFIDENCIAIS</h2>
+<p class="sub">Escolha um caso. Mas esteja preparado para as respostas.</p>
+<div class="cards">
+<div class="card">
+<span class="tag">CASO 001 • ABERTO</span>
+<h3>A CASA DA ESTRADA</h3>
+<p>Uma construção abandonada. Luzes aparecem nas janelas durante a madrugada, mesmo sem energia elétrica.</p>
+</div>
+<div class="card">
+<span class="tag">CASO 002 • MISTERIOSO</span>
+<h3>O ÚLTIMO VIGIA</h3>
+<p>Um vigia desapareceu durante seu turno em um prédio antigo. Seu rádio continuou transmitindo por horas.</p>
+</div>
+<div class="card">
+<span class="tag">CASO 003 • RESTRITO</span>
+<h3>A FITA PERDIDA</h3>
+<p>Uma gravação encontrada em um porão contém uma voz que ninguém conseguiu identificar.</p>
+</div>
+</div>
+</section>
+
+<section id="pistas">
+<h2>QUADRO DE INVESTIGAÇÃO</h2>
+<p class="sub">As pistas encontradas até agora.</p>
+<div class="board">
+<div class="clue">📁 PISTA 01 — Uma fotografia foi encontrada na entrada da casa.</div>
+<div class="clue">📻 PISTA 02 — Um rádio antigo transmite uma mensagem às 03:17.</div>
+<div class="clue">🔑 PISTA 03 — Uma chave sem identificação foi encontrada no porão.</div>
+</div>
+</section>
+
+<section id="votacao">
+<h2>DECIDA O PRÓXIMO PASSO</h2>
+<p class="sub">Qual mistério merece uma investigação primeiro?</p>
+<button class="vote" onclick="votar('A casa da estrada')">🏚️ Investigar a casa abandonada</button>
+<button class="vote" onclick="votar('O prédio antigo')">🏢 Investigar o prédio antigo</button>
+<button class="vote" onclick="votar('A fita perdida')">📼 Investigar a fita perdida</button>
+<p id="message"></p>
+</section>
+
+<section id="investigador">
+<h2>TORNE-SE UM INVESTIGADOR</h2>
+<p class="sub">Escolha um apelido para aparecer nesta demonstração.</p>
+<input id="apelido" maxlength="20" placeholder="Seu apelido de investigador">
+<button onclick="registrar()">REGISTRAR APELIDO</button>
+<p id="registro" style="color:#d7b43b"></p>
+</section>
+
+<footer>
+ARQUIVO SOMBRIO © 2026<br><br>
+NEM TODO MISTÉRIO PRECISA SER REVELADO.
+</footer>
+
+<script>
+function votar(opcao){
+document.getElementById('message').textContent=
+'Você escolheu: '+opcao+'. Voto demonstrativo registrado neste aparelho.';
+}
+function registrar(){
+let nome=document.getElementById('apelido').value.trim();
+if(!nome){
+document.getElementById('registro').textContent='Digite um apelido primeiro.';
+return;
+}
+document.getElementById('registro').textContent=
+'Investigador '+nome+' registrado nesta demonstração!';
+}
+</script>
+
+</body>
+</html>
+
